@@ -1,0 +1,150 @@
+.theme_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative; /* Added to establish stacking context */
+  }
+  
+  .theme_section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
+    transform: skewY(-5deg);
+    animation: skewBackground 2s infinite linear;
+    z-index: -1; /* Ensure it's positioned behind the content */
+  }
+  
+  /* Rest of your existing CSS for .theme_section */
+  
+  
+  .exp {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards 1s;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .theme_section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 100%);
+    transform: skewY(-5deg);
+    animation: skewBackground 2s infinite linear;
+  }
+  
+  @keyframes skewBackground {
+    0% {
+      transform: skewY(-5deg) translateX(-100%);
+    }
+    100% {
+      transform: skewY(-5deg) translateX(100%);
+    }
+  }
+  
+
+#theme_temp_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.theme_taamplet1 {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.theme_taamplet1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.theme_taamplet1 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px 8px 0 0;
+}
+
+.theme_taamplet1 button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+}
+
+.theme_taamplet1:hover button {
+  opacity: 1;
+  border-radius: 10%;
+  background: #5E5DF0;
+}
+ .more{
+    display: flex;
+    justify-content: center;
+ }
+.more_themes {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+   
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  .more_themes:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .more_themes:focus {
+    outline: none;
+  }
+  
+  .more_themes:active {
+    animation: pulse 0.3s ease-in-out;
+  }
+  
+  
